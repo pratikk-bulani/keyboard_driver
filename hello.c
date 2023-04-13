@@ -98,6 +98,7 @@ static int test_interrupt_init(void)
 
 static void test_interrupt_exit(void)
 {
+        pr_info("%s: keylog: %s\n", __func__, keylog);
         pr_info("%s: In exit\n", __func__);
 	sysfs_remove_file(kernel_kobj, &my_attr.attr);
         synchronize_irq(irq); /* synchronize interrupt */
