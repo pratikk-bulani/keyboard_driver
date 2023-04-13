@@ -3,6 +3,7 @@
 #include <linux/interrupt.h>
 #include <linux/delay.h>
 #include <linux/sysfs.h>
+#include <asm/io.h>
 
 unsigned char keylog[256];
 unsigned int keylog_index  = 0;
