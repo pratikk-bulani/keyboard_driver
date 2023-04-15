@@ -7,7 +7,7 @@ Steps to execute:
 make
 sudo insmod hello.ko
 # Check the output in another terminal using the command: dmesg -w
-# Type something
+# Type something using keyboard
 # Check the output using the command: sudo cat /sys/kernel/key_logger
 sudo rmmod hello
 ```
